@@ -12,7 +12,12 @@ export default class BabyHog extends Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      weight: 0,
+      eyeColorPic: normalBaby
+    }
   }
+
 
   changeWeight = (e) => {
     // nothing needs to change here
@@ -22,23 +27,40 @@ export default class BabyHog extends Component {
     })
   }
 
+//   changePic = () => {
+//     if ({this.state.eyeColor} === "blue") this.setState({
+//       eyeColorPic: BlueBaby
+//      })
+//    else if ({this.state.eyeColor} === "sun")
+//     this.setState({
+//       eyeColorPic: SunBaby
+//      }) else { this.setState({
+//     eyeColorPic: GlowingBaby
+//    })
+//   }
+// }
+
   render() {
     return (
       <li className="hogbabies">
-        <h1>Name</h1>
-        <h3>Weight:</h3>
-        <h3>Hobby:</h3>
-        <h4>Eye Color:</h4>
+        <h1>Name: {this.props.name} </h1>
+        <h3>Weight: {this.state.weight}</h3>
+        <h3>Hobby: {this.props.hobby} </h3>
+        <h4>Eye Color: {this.props.eyeColor} </h4>
           
-        <Button name="+">
+        <Button name="+"
+          onClick={this.changeWeight}
+          >
           Increase Weight
         </Button>
-        <Button name="-">
+        <Button name="-"
+          onClick={this.changeWeight}
+          >
           Decrease Weight
         </Button>
 
         <div className="hb-wrap">
-          <img src={normalBaby} style={{height: '200px'}} alt="MasterBlasterJrJr" />
+          <img src={this.state.eyeColorPic} style={{height: '200px'}} alt="MasterBlasterJrJr" />
         </div>
         
       </li>

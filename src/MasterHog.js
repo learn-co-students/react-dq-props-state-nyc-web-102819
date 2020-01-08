@@ -27,7 +27,7 @@ export default class MasterHog extends Component {
   eyeColorPic = () => {
     switch (this.state.eyeColor) {
       case "blue":
-         return BlueBaby
+         return "./blue-eyes.png"
           console.log("blue eyes")
         break;
 
